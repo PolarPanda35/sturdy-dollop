@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6a49fa" />
+    <meta name="description" content="CryptoWala investment and trading prototype." />
+    <title>CryptoWala · Investment Prototype</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%236A49FA'/%3E%3Cpath d='M8 11.5 12.4 20 16 13.5 19.6 20 24 11.5' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="auth-screen" class="auth-screen">
+      <div class="auth-brand">
+        <div class="brand-mark">W</div>
+        <span>CryptoWala</span>
+      </div>
+      <main class="auth-layout">
+        <section class="auth-story">
+          <div class="eyebrow"><span class="status-dot"></span> Investment demo</div>
+          <h1>Your crypto journey,<br /><span>made simple.</span></h1>
+          <p>Invest, trade, and build disciplined crypto habits—all in one clear, secure experience.</p>
+          <div class="auth-chart-card" aria-hidden="true">
+            <div class="mini-brand"><span class="coin coin-btc">₿</span> Bitcoin <strong>₹58,42,190</strong></div>
+            <svg viewBox="0 0 560 190" role="img" aria-label="Sample Bitcoin performance chart">
+              <defs><linearGradient id="authFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#6a49fa" stop-opacity=".26"/><stop offset="1" stop-color="#6a49fa" stop-opacity="0"/></linearGradient></defs>
+              <path d="M0 156 C55 142 70 162 122 126 S198 135 246 94 S310 115 355 70 S430 92 478 43 S525 58 560 20 L560 190 L0 190Z" fill="url(#authFill)"/>
+              <path d="M0 156 C55 142 70 162 122 126 S198 135 246 94 S310 115 355 70 S430 92 478 43 S525 58 560 20" fill="none" stroke="#6a49fa" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <div class="auth-stats"><span>Portfolio value<strong>₹2,84,650</strong></span><span>Total return<strong class="positive">+18.4%</strong></span></div>
+          </div>
+          <div class="trust-row"><span>✓ FIU registered</span><span>◈ Bank-grade security</span><span>● Built for India</span></div>
+        </section>
+        <section class="auth-card" aria-labelledby="auth-title">
+          <div class="mobile-brand"><div class="brand-mark">W</div><span>CryptoWala</span></div>
+          <div class="demo-pill">Prototype · No real money</div>
+          <h2 id="auth-title">Welcome to CryptoWala</h2>
+          <p>Sign in or create your investment account.</p>
+          <div class="auth-tabs" role="tablist">
+            <button class="auth-tab active" data-auth-tab="email" role="tab">Email</button>
+            <button class="auth-tab" data-auth-tab="phone" role="tab">Phone</button>
+          </div>
+          <form id="email-form" class="auth-form">
+            <label>Email address<input type="email" id="email" placeholder="you@example.com" value="demo@cryptowala.com" required /></label>
+            <label>Password<input type="password" id="password" placeholder="8+ characters" value="demopass" minlength="6" required /></label>
+            <button class="primary-btn wide" type="submit">Continue securely</button>
+          </form>
+          <form id="phone-form" class="auth-form hidden">
+            <label>Mobile number<div class="phone-input"><span>+91</span><input type="tel" id="phone" placeholder="98765 43210" pattern="[0-9 ]{10,12}" required /></div></label>
+            <button class="primary-btn wide" type="submit">Send demo OTP</button>
+          </form>
+          <div class="or"><span>or continue with</span></div>
+          <div class="social-grid">
+            <button data-social="Google" class="social-btn"><span class="google">G</span> Google</button>
+            <button data-social="Apple" class="social-btn"><span class="apple">●</span> Apple</button>
+          </div>
+          <p class="terms">By continuing, you agree to the Terms and acknowledge this is a simulated prototype.</p>
+        </section>
+      </main>
+    </div>
+
+    <div id="app-shell" class="app-shell hidden">
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-head">
+          <button class="icon-btn close-nav" id="close-nav" aria-label="Close navigation">×</button>
+          <div class="app-brand"><div class="brand-mark">W</div><span>CryptoWala</span></div>
+        </div>
+        <div class="demo-label">Investment prototype</div>
+        <nav aria-label="Main navigation">
+          <button data-view="dashboard" class="nav-item active"><span>⌂</span>Dashboard</button>
+          <button data-view="markets" class="nav-item"><span>◫</span>Markets</button>
+          <button data-view="sip" class="nav-item"><span>↻</span>Crypto SIP</button>
+          <button data-view="portfolio" class="nav-item"><span>◔</span>Portfolio</button>
+          <button data-view="transactions" class="nav-item"><span>≡</span>Transactions</button>
+        </nav>
+        <div class="sidebar-section">FUNDS</div>
+        <nav aria-label="Funds navigation">
+          <button data-view="deposit" class="nav-item"><span>＋</span>Deposit INR</button>
+          <button data-view="withdraw" class="nav-item"><span>↗</span>Withdraw</button>
+        </nav>
+        <div class="sidebar-spacer"></div>
+        <button id="reset-demo" class="nav-item subtle"><span>↺</span>Reset demo</button>
+        <button id="sign-out" class="profile-card">
+          <span class="avatar">AS</span><span><strong>Aarav Sharma</strong><small>Demo investor</small></span><span>⋯</span>
+        </button>
+      </aside>
+      <div id="nav-scrim" class="nav-scrim"></div>
+      <main class="main-content">
+        <header class="topbar">
+          <div class="topbar-left"><button id="menu-toggle" class="icon-btn menu-btn" aria-label="Open navigation">☰</button><div><span class="greeting">Good morning, Aarav</span><small>Here’s how your money is doing</small></div></div>
+          <div class="top-actions"><div class="market-open"><span class="status-dot"></span>Market open</div><button class="icon-btn" aria-label="Notifications">♢<span class="notification-dot"></span></button><button data-view="deposit" class="primary-btn compact">＋ Add funds</button></div>
+        </header>
+        <div id="view-root" tabindex="-1"></div>
+      </main>
+    </div>
+
+    <div id="modal-root" class="modal-root hidden" role="presentation"></div>
+    <div id="toast-root" class="toast-root" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
